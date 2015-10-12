@@ -1,6 +1,8 @@
 #ifndef STUD_String_H
 #define STUD_String_H
 
+#include <cstring>
+
 #include <initializer_list>
 #include <string>
 
