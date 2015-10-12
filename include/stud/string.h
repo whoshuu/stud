@@ -13,8 +13,8 @@ class string : public std::string {
     string(string&& rhs) = default;
     string& operator=(const string& rhs) = default;
     string& operator=(string&& rhs) = default;
-    explicit string(const char* raw_string) : std::string{raw_string} {}
-    explicit string(const std::string& std_string) : std::string{std_string} {}
+    explicit string(const char* raw_string) : std::string(raw_string) {}
+    explicit string(const std::string& std_string) : std::string(std_string) {}
 };
 
 } // namespace stud
