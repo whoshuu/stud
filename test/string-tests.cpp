@@ -1,6 +1,8 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 
+#include <utility>
+
 #include "stud/string.h"
 
 
@@ -14,17 +16,21 @@ TEST_CASE("Copy constructor") {
 }
 
 TEST_CASE("Move constructor") {
-    REQUIRE(stud::string(stud::string("Hello world")) == std::string("Hello world"));
+    stud::string to_move("Hello world");
+    stud::string s(std::move(to_move));
+    REQUIRE(s == std::string("Hello world"));
 }
 
 TEST_CASE("Copy assignment") {
     stud::string s("Hello world");
-    stud::string s2 = s;
+    stud::string s2;
+    s2 = s;
     REQUIRE(s2 == std::string("Hello world"));
 }
 
 TEST_CASE("Move assignment") {
-    stud::string s = stud::string("Hello world");
+    stud::string s;
+    s = std::move(stud::string("Hello world"));
     REQUIRE(s == std::string("Hello world"));
 }
 
