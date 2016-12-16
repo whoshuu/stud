@@ -50,7 +50,7 @@ endmacro()
 message(STATUS "stud CMake Options")
 message(STATUS "=======================================================")
 stud_option(BUILD_STUD_TESTS "Set to ON to build stud tests." ON)
-stud_option(GENERATE_COVERAGE "Set to ON to generate coverage reports." OFF)
+stud_option(GENERATE_COVERAGE "Set to ON to generate coverage reports." ON)
 message(STATUS "=======================================================")
 
 if(BUILD_STUD_TESTS) 
